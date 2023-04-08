@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            background: #fcc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width: 350px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .eye{
+            width: 110px;
+            height: 72px;
+            background: rgb(236, 187, 147);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        span{
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        aside{
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #fff;
+        }
+        .saman{
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+<body onmousemove="saman(event)">
+    <div class="box">
+        <div class="eye">
+            <span>
+                <aside></aside>
+            </span>
+        </div>
+        <div class="eye">
+            <span>
+                <aside></aside>
+            </span>
+        </div>
+    </div>
+</body>
+<script>
+    function saman(event){
+        let x = ((event.clientX)/20)-41
+        let y = ((event.clientY)/20)-18
+        document.querySelector('.eye:nth-of-type(1)>span').style.transform = 'perspective(700px)translateX('+x+'px)translateY('+y+'px)'
+        document.querySelector('.eye:nth-of-type(2)>span').style.transform = 'perspective(700px)translateX('+x+'px)translateY('+y+'px)'
+    }
+</script>
+</html>
